@@ -1,0 +1,20 @@
+===============================================================================
+EXTENSION NAME : linecount
+EXTENSION VERSION : 0.1.7
+-------------------------------------------------------------------------------
+count time : 2017-07-24 01:03:12
+count workspace : c:\Users\Administrator\Desktop\ros-ws\navigation\move_base
+total files : 8
+total code lines : 1061
+total comment lines : 298
+total blank lines : 278
+
+cfg\MoveBase.cfg, code is 20, comment is 0, blank is 9.
+CHANGELOG.rst, code is 63, comment is 0, blank is 14.
+CMakeLists.txt, code is 59, comment is 0, blank is 8.
+include\move_base\move_base.h, code is 94, comment is 97, blank is 42.
+package.xml, code is 53, comment is 2, blank is 8.
+planner_test.xml, code is 12, comment is 0, blank is 0.
+src\move_base.cpp, code is 752, comment is 170, blank is 192.
+src\move_base_node.cpp, code is 8, comment is 29, blank is 5.
+===============================================================================

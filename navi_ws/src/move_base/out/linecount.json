@@ -1,0 +1,65 @@
+{
+    "extension": "linecount",
+    "version": "0.1.7",
+    "workspace": "c:\\Users\\Administrator\\Desktop\\ros-ws\\navigation\\move_base",
+    "linecount": [
+        {
+            "version": "0.1.7",
+            "counttime": "2017-07-24 01:03:12",
+            "filesum": 8,
+            "codesum": 1061,
+            "commentsum": 298,
+            "blanksum": 278,
+            "filelist": [
+                {
+                    "blank": 9,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "cfg\\MoveBase.cfg"
+                },
+                {
+                    "blank": 14,
+                    "code": 63,
+                    "comment": 0,
+                    "filename": "CHANGELOG.rst"
+                },
+                {
+                    "blank": 8,
+                    "code": 59,
+                    "comment": 0,
+                    "filename": "CMakeLists.txt"
+                },
+                {
+                    "blank": 42,
+                    "code": 94,
+                    "comment": 97,
+                    "filename": "include\\move_base\\move_base.h"
+                },
+                {
+                    "blank": 8,
+                    "code": 53,
+                    "comment": 2,
+                    "filename": "package.xml"
+                },
+                {
+                    "blank": 0,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "planner_test.xml"
+                },
+                {
+                    "blank": 192,
+                    "code": 752,
+                    "comment": 170,
+                    "filename": "src\\move_base.cpp"
+                },
+                {
+                    "blank": 5,
+                    "code": 8,
+                    "comment": 29,
+                    "filename": "src\\move_base_node.cpp"
+                }
+            ]
+        }
+    ]
+}

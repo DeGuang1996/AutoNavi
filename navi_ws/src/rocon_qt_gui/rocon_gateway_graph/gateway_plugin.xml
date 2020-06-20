@@ -1,0 +1,17 @@
+<library path="src">
+  <class name="Gateway Graph" type="rocon_gateway_graph.gateway_graph.GatewayGraph" base_class_type="rqt_gui_py::Plugin">
+    <description>
+      Display the current rocon gateway network as a graph.
+    </description>
+    <qtgui>
+      <group>
+        <label>Rocon</label>
+        <icon type="theme">folder</icon>
+        <statustip>General plugins for ROCON.</statustip>
+      </group>
+      <label>Gateway Graph</label>
+      <icon type="file">./resources/images/rocon_logo.png</icon>
+      <statustip>Display the current rocon gateway network as a graph.</statustip>
+    </qtgui>
+  </class>
+</library>

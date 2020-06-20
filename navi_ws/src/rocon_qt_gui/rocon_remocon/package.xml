@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<package>
+  <name>rocon_remocon</name>
+  <version>0.10.0</version>
+  <description>A qt based remocon for interacting with ros systems.</description>
+  <maintainer email="d.stonier@gmail.com">Daniel Stonier</maintainer>
+  <maintainer email="dwlee@yujinrobot.com">Donguk Lee</maintainer>
+  <license>BSD</license>
+  <url type="website">http://www.ros.org/wiki/rocon_remocon</url>
+  <url type="repository">https://github.com/robotics-in-concert/rocon_qt_gui</url>
+  <url type="bugtracker">https://github.com/robotics-in-concert/rocon_qt_gui/issues</url>
+  <author>Daniel Stonier</author>
+  <author>Donguk Lee</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>pyqt4-dev-tools</build_depend> <!-- pyrcc4 -->
+
+  <run_depend>pyqt4-dev-tools</run_depend> <!-- pyrcc4 -->
+  <run_depend>python-rospkg</run_depend>
+  <run_depend>python_qt_binding</run_depend>
+  <run_depend>qt_gui_py_common</run_depend>
+  <run_depend>rqt_gui</run_depend>
+  <run_depend>rqt_gui_py</run_depend>
+  <run_depend>rocon_app_manager_msgs</run_depend>
+  <run_depend>rocon_console</run_depend>
+  <run_depend>rocon_icons</run_depend>
+  <run_depend>rocon_interactions</run_depend>
+  <run_depend>rocon_interaction_msgs</run_depend>
+  <run_depend>rocon_launch</run_depend>
+  <run_depend>rocon_python_comms</run_depend>
+  <run_depend>rocon_python_utils</run_depend>
+  <run_depend>rocon_std_msgs</run_depend>
+  <run_depend>rocon_uri</run_depend>
+  <run_depend>roslaunch</run_depend>
+  <run_depend>rospy</run_depend>
+  <run_depend>rqt_wrapper</run_depend>
+  <run_depend>std_msgs</run_depend>
+
+  <export>
+    <rqt_gui plugin="${prefix}/rqt_remocon_plugin.xml"/>
+  </export>
+</package>

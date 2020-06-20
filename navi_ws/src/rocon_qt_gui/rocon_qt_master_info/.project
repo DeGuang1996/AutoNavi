@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>rocon_qt_master_info</name>
+	<comment></comment>
+	<projects>
+		<project>rocon_console</project>
+		<project>rocon_master_info</project>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.python.pydev.PyDevBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.python.pydev.pythonNature</nature>
+	</natures>
+</projectDescription>

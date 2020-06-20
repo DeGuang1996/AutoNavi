@@ -1,0 +1,19 @@
+#!/usr/bin/env python
+#
+# License: BSD
+#   https://raw.github.com/robotics-in-concert/rocon_qt_gui/license/LICENSE
+#
+##############################################################################
+# Imports
+##############################################################################
+
+import rqt_wrapper
+import sys
+
+##############################################################################
+# Main
+##############################################################################
+
+if __name__ == '__main__':
+    rqt_wrapper = rqt_wrapper.RQTWrapper('rocon_remocon')
+    sys.exit(rqt_wrapper.exec_())

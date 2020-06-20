@@ -1,0 +1,52 @@
+<launch>
+    <!-- Read launch arguments -->,
+    <arg name="t" default="600"/>
+    <!-- Set the arguments to parameters -->
+    <param name="exploration_time" value="$(arg t)"/>
+    <arg name="3d_sensor" default="$(env TURTLEBOT_3D_SENSOR)"/>
+
+    <!-- Simulation -->
+    <include file="$(find turtlebot_gazebo)/launch/turtlebot_world.launch">
+    <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
+    <!-- <arg name="world_file" value="$(find autonomous_nav)/worlds/willowgarage_new.world"/> -->
+    <!-- <arg name="world_file" value="$(find autonomous_nav)/worlds/corridor.world"/> -->
+    <arg name="world_file" value="$(find autonomous_nav)/worlds/lab.world"/>
+    <arg name="gui" default="true"/>
+    </include>
+
+    <!-- Mapping -->
+    <node pkg="autonomous_nav" type="laserscan_to_pointcloud" name="laserscan_to_pointcloud" respawn="true" output="screen" />
+
+    <node pkg="octomap_server" type="octomap_server_node" name="octomap_server" args=" " cwd="node" output="screen">
+        <param name="frame_id"   value="/odom" />
+        <remap from="/cloud_in"  to="/pc_from_scan" />
+        <param name="resolution" value="0.075" />
+        <param name="latch"      value="False" />
+        <remap from="projected_map" to="map" />
+        <!--remap from="/cloud_in" to="/camera/depth_registered/points" /--> <!-- real turtlebot -->
+    </node>
+    
+    <!-- Rviz-->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find autonomous_nav)/launch/config/robot.rviz" />
+
+    <!-- Autonomous_nav nodes -->
+    <node name="potential_map" pkg="autonomous_nav" type="potential_map" output="screen"/>
+
+    <!-- <node name="driver" pkg="autonomous_nav" type="driver_node.py" output="screen"/>
+    <node name="controller" pkg="autonomous_nav" type="controller_node.py" output="screen"/>
+    <node name="mission_handler" pkg="autonomous_nav" type="mission_node.py" output="screen"/> -->
+
+    <node name="mission_handler" pkg="autonomous_nav" type="mission_node_copy.py" output="screen"/>
+    <node name="dynamic_config" pkg="autonomous_nav" type="dynamic.py" output="screen"/>
+
+    <!-- <arg name="custom_gmapping_launch_file" default="$(find turtlebot_navigation)/launch/includes/gmapping/$(arg 3d_sensor)_gmapping.launch.xml"/>
+    <include file="$(arg custom_gmapping_launch_file)"/> -->
+
+    <node pkg="fake_localization" type="fake_localization" name="fake_localization">
+        <param name="use_map_topic" value="true"/>
+        <remap from="base_pose_ground_truth" to="odom"/>
+    </node>
+    
+    <!-- Move base -->
+    <include file="$(find turtlebot_navigation)/launch/includes/move_base.launch.xml"/>
+</launch>

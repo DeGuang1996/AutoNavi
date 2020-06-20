@@ -1,0 +1,18 @@
+#!/usr/bin/env python
+#
+# License: BSD
+#   https://raw.github.com/robotics-in-concert/rocon_qt_gui/license/LICENSE
+#
+##############################################################################
+# Imports
+##############################################################################
+
+import sys
+from rqt_gui.main import Main
+
+##############################################################################
+# Main
+##############################################################################
+
+main = Main()
+sys.exit(main.main(sys.argv, standalone='rocon_gateway_graph'))

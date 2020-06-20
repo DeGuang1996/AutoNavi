@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package>
+  <name>rocon_qt_listener</name>
+  <version>0.10.0</version>
+  <description>A simple listener</description>
+  <maintainer email="d.stonier@gmail.com">Daniel Stonier</maintainer>
+  <license>BSD</license>
+  <url type="website">http://www.ros.org/wiki/rocon_qt_listener</url>
+  <url type="repository">https://github.com/robotics-in-concert/rocon_qt_gui</url>
+  <url type="bugtracker">https://github.com/robotics-in-concert/rocon_qt_gui/issues</url>
+  <author>Daniel Stonier</author>
+  <buildtool_depend>catkin</buildtool_depend>
+  
+  <run_depend>python-rospkg</run_depend>
+  <run_depend>python_qt_binding</run_depend>
+  <run_depend>rocon_console</run_depend>
+  <run_depend>rocon_python_utils</run_depend>
+  <run_depend>rospy</run_depend>
+  <run_depend>std_msgs</run_depend>
+</package>

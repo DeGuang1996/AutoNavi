@@ -1,0 +1,54 @@
+#!/usr/bin/env python
+#
+# License: BSD
+#   https://raw.github.com/robotics-in-concert/rocon_qt_gui/license/LICENSE
+#
+##############################################################################
+# Imports
+##############################################################################
+
+import sys
+import signal
+
+from python_qt_binding.QtGui import QApplication
+from python_qt_binding.QtCore import QTimer
+
+import rocon_remocon
+
+##############################################################################
+# Globals
+##############################################################################.
+
+app = None
+interactions_chooser = None
+
+##############################################################################
+# Methods
+##############################################################################.
+
+
+def signal_handler(signum, f):
+    print "[sub] Interrupt"
+    if signum == signal.SIGINT:
+        interactions_chooser.shutdown()
+        app.exit(0)
+
+##############################################################################
+# Main
+##############################################################################.
+
+if __name__ == "__main__":
+    signal.signal(signal.SIGINT, signal_handler)
+
+    ip = sys.argv[1]  # ip
+    host_name = sys.argv[2]  # ip
+
+    app = QApplication(sys.argv)
+
+    # Let the interpreter run each 200 ms.
+    timer = QTimer()
+    timer.start(200)
+    timer.timeout.connect(lambda: None)
+
+    interactions_chooser = rocon_remocon.InteractiveClientUI(None, "Interactions Chooser", app, ip, host_name, False)
+    app.exec_()

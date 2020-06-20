@@ -1,0 +1,76 @@
+#!/usr/bin/env python
+#
+# License: BSD
+#   https://raw.github.com/robotics-in-concert/rocon_qt_gui/license/LICENSE
+#
+##############################################################################
+# Imports
+##############################################################################
+
+import os
+import sys
+
+import rospy
+import rostopic
+import rocon_remocon
+import rocon_python_comms
+import rocon_std_msgs.msg as rocon_std_msgs
+
+##############################################################################
+# Methods
+##############################################################################
+
+
+def generate_unknown_response():
+    """
+    This output is parsed by the rocon_remocon and used to fill in fields
+    about the master information.
+    """
+    print "Unknown"
+    print "Unknown."
+    print "unknown.png"
+
+
+def generate_uncommunicable_response():
+    """
+    Slight variation of the above - when it finds the right topics, but
+    for some reason (usually ROS_IP communication) it can't contact the
+    machine, it will emit this information.
+    """
+    print "Uncommunicable"
+    print "Ros system discovered, but are ROS_IP and ROS_MASTER_URI on local/remote machines correctly configured?"
+    print "unknown.png"
+
+
+##############################################################################
+# Main
+##############################################################################
+
+if __name__ == "__main__":
+    ros_master_uri = sys.argv[1]
+    host_name = sys.argv[2]
+
+    os.environ["ROS_MASTER_URI"] = ros_master_uri
+    os.environ["ROS_HOSTNAME"] = host_name
+
+    try:
+        rospy.init_node("rocon_remocon_checker", anonymous=True)
+        (topic_type, topic_name, unused) = rostopic.get_topic_type("/rocon/master/info", blocking=False)
+        if topic_type is None:
+            topic_name = rocon_python_comms.find_topic('rocon_std_msgs/MasterInfo', timeout=rospy.rostime.Duration(5.0), unique=True)
+        master_info = rocon_python_comms.SubscriberProxy(topic_name, rocon_std_msgs.MasterInfo)()
+        if master_info is None:
+            generate_uncommunicable_response()
+        else:
+            # These prints are not for debugging! They are used as a return value for the remocon!
+            print master_info.name
+            print master_info.description
+            icon_name = master_info.icon.resource_name.split('/').pop()
+            if master_info.icon.data:
+                rocon_remocon.setup_home_dirs()
+                icon = open(os.path.join(rocon_remocon.get_icon_cache_home(), icon_name), 'w')
+                icon.write(master_info.icon.data)
+                icon.close()
+            print icon_name
+    except (rocon_python_comms.NotFoundException, rospy.exceptions.ROSInitException) as e:
+        generate_unknown_response()

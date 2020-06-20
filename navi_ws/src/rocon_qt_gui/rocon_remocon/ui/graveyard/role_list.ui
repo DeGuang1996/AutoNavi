@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Remocon</class>
+ <widget class="QWidget" name="Remocon">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>784</width>
+    <height>478</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Roles</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QListWidget" name="role_list_widget">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+       <horstretch>50</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="movement">
+      <enum>QListView::Static</enum>
+     </property>
+     <property name="viewMode">
+      <enum>QListView::ListMode</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <property name="margin">
+      <number>5</number>
+     </property>
+     <item>
+      <widget class="QPushButton" name="refresh_btn">
+       <property name="toolTip">
+        <string>Refresh the role list</string>
+       </property>
+       <property name="text">
+        <string>Refresh</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="back_btn">
+       <property name="toolTip">
+        <string>Switch back to the master chooser.</string>
+       </property>
+       <property name="text">
+        <string>Back</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QPushButton" name="stop_all_interactions_button">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="toolTip">
+      <string>Stop all running interactions</string>
+     </property>
+     <property name="text">
+      <string>Stop All Interactions</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

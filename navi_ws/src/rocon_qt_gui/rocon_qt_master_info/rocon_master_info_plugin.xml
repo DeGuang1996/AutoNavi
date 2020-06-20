@@ -1,0 +1,17 @@
+<library path="src">
+  <class name="Master Info" type="rocon_qt_master_info.master_info.MasterInfo" base_class_type="rqt_gui_py::Plugin">
+    <description>
+        View information provided by a rocon master.
+    </description>
+    <qtgui>
+      <group>
+        <label>Rocon</label>
+        <icon type="theme">folder</icon>
+        <statustip>General plugins for ROCON.</statustip>
+      </group>
+      <label>Master Info</label>
+      <icon type="file">./resources/images/rocon_logo.png</icon>
+      <statustip>Information about the rocon master.</statustip>
+    </qtgui>
+  </class>
+</library>

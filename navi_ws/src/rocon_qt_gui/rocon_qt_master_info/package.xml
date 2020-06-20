@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package>
+  <name>rocon_qt_master_info</name>
+  <version>0.10.0</version>
+  <description>
+    A rqt plugin that displays the information provided by a rocon master
+  </description>
+
+  <maintainer email="d.stonier@gmail.com">Daniel Stonier</maintainer>
+  <license>BSD</license>
+  <url type="website">http://wiki.ros.org/rocon_gateway_graph</url>
+  <url type="repository">https://github.com/robotics-in-concert/rocon_qt_gui</url>
+  <url type="bugtracker">https://github.com/robotics-in-concert/rocon_qt_gui/issues</url>
+  <author>Daniel Stonier</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  
+  <run_depend>qt_gui_py_common</run_depend>
+  <run_depend>rqt_gui</run_depend>
+  <run_depend>rqt_gui_py</run_depend>
+  <run_depend>rospy</run_depend>
+  <run_depend>python-rospkg</run_depend>
+  <run_depend>rocon_master_info</run_depend>
+
+  <export>
+    <rqt_gui plugin="${prefix}/rocon_master_info_plugin.xml"/>
+  </export>
+</package>

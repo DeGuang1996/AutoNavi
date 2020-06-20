@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package>
+  <name>rocon_qt_gui</name>
+  <version>0.10.0</version>
+  <description>
+    Qt gui applications for interacting with the rocon framework.
+  </description>
+  <maintainer email="d.stonier@gmail.com">Daniel Stonier</maintainer>
+  <license>BSD</license>
+  <url type="website">http://www.ros.org/wiki/rocon_qt_gui</url>
+  <url type="repository">https://github.com/robotics-in-concert/rocon_qt_qui</url>
+  <url type="bugtracker">https://github.com/robotics-in-concert/rocon_qt_qui/issues</url>
+  <author>Daniel Stonier</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <run_depend>rocon_gateway_graph</run_depend>
+  <run_depend>rocon_qt_listener</run_depend>
+  <run_depend>rocon_qt_master_info</run_depend>
+  <run_depend>rocon_remocon</run_depend>
+
+  <export>
+    <metapackage/>
+  </export>
+</package>
+

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>interactions</class>
+ <widget class="QWidget" name="interactions">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>646</width>
+    <height>492</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Interactions</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,0">
+     <property name="margin">
+      <number>5</number>
+     </property>
+     <item>
+      <widget class="QListWidget" name="interactions_list_widget">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>350</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="movement">
+        <enum>QListView::Static</enum>
+       </property>
+       <property name="viewMode">
+        <enum>QListView::ListMode</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <property name="sizeConstraint">
+        <enum>QLayout::SetNoConstraint</enum>
+       </property>
+       <property name="margin">
+        <number>5</number>
+       </property>
+       <item>
+        <widget class="QPlainTextEdit" name="app_info"/>
+       </item>
+       <item>
+        <layout class="QGridLayout" name="gridLayout">
+         <property name="margin">
+          <number>5</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QPushButton" name="stop_interactions_button">
+           <property name="toolTip">
+            <string>Stop all running interactions of this type</string>
+           </property>
+           <property name="statusTip">
+            <string/>
+           </property>
+           <property name="text">
+            <string>Stop Interaction(s)</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QPushButton" name="back_btn">
+         <property name="toolTip">
+          <string>Switch back to the role list</string>
+         </property>
+         <property name="statusTip">
+          <string/>
+         </property>
+         <property name="text">
+          <string>Back</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

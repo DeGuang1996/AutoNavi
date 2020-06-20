@@ -1,0 +1,4 @@
+<!-- Quite useless really, but it does provide a 4th way of launching gateway graph. -->
+<launch>
+  <node pkg="rocon_gateway_graph" name="$(anon gateway_graph)" type="rocon_gateway_graph"/>
+</launch>

@@ -1,0 +1,17 @@
+<library path="src">
+  <class name="Rqt Remocon" type="rocon_remocon.rqt_remocon.RqtRemocon" base_class_type="rqt_gui_py::Plugin">
+    <description>
+      Rqt remocon
+    </description>
+    <qtgui>
+      <group>
+        <label>Rocon</label>
+        <icon type="theme">folder</icon>
+        <statustip>ROCON QR Remocon.</statustip>
+      </group>
+      <label>Rqt remocon</label>
+      <icon type="file">./resources/images/rocon_logo.png</icon>
+      <statustip>rqt remocon. </statustip>
+    </qtgui>
+  </class>
+</library>

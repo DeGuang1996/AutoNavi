@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/">
+    <file>images/dark_moon_eclipse.png</file>
+    <file>images/rocon_logo.png</file>
+  </qresource>
+</RCC>
